@@ -1,5 +1,6 @@
 package com.javaguides.springboot;
 
+import com.google.common.base.Joiner;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.google.common.collect.ImmutableMap;
@@ -12,22 +13,22 @@ import java.util.Map;
 public class WelcomeController {
     @GetMapping ("/welcome")
     public String welcome(){
-	printItems();
         return "Welcome to Team Code Masters!!!";
     }
 
-    public void printItems(){
-    	 Map items = ImmutableMap.of("coin", 3, "glass", 4, "pencil", 1);
+    @GetMapping ("/list")
+    public String displayList(){
+    	Map items = ImmutableMap.of("coin", 3, "glass", 4, "pencil", 1);
+	String itemsList = Joiner.on(",")
+				.withKeyValueSeparator(" -> ")
+				.join(items);
 
-        items.entrySet()
-                .stream()
-                .forEach(System.out::println);
-        
         List<String> fruits = Lists.newArrayList("orange", "banana", "kiwi", 
                 "mandarin", "date", "quince");
         
-        for (String fruit: fruits) {
-            System.out.println(fruit);
-        }
+	String fruitsList = Joiner.on(", ")
+				.join(fruits);
+        
+	return itemsList + " " + fruitsList;
     }
 }
