@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hyperlinks</title>
+</head>
+<body>
+<h1>Hyperlinks</h1>
+<ul>
+    <li th:each="link : ${hyperlinks}">
+        <a th:href="${link}" th:text="${link}"></a>
+    </li>
+</ul>
+</body>
+</html>
