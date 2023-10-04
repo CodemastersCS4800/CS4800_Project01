@@ -18,6 +18,6 @@ public class WelcomeController {
         UnivariateFunction function = v -> v;
         UnivariateIntegrator integrator = new SimpsonIntegrator(1.0e-12, 1.0e-8, 1, 32);
         double i = integrator.integrate(100, function, 0, 10);
-        return "hello";
+        return "Calculates integral of identity function.";
     }
 }
