@@ -46,8 +46,7 @@ public class WelcomeController {
 	public @ResponseBody Iterable<Locations> displayDBElements(){
 		return lRepo.findAll(); 
 	}
+	
 
-	@PostMapping("/LocationAdd")
-	public 
 
 }
