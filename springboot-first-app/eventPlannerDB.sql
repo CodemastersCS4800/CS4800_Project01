@@ -50,4 +50,4 @@ create table publicEvent (
     finalFilePath VARCHAR (255)
 );
 
-
+INSERT INTO Locations(id, address, size, max_capacity) VALUES (1, "hi", 10, "5x5ft");

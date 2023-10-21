@@ -20,6 +20,9 @@ public class Locations{
 
 	private Integer maxCapacity;
 
+	public Locations(){
+	}	
+
 	public void setID(Integer id){
 		this.id = id; 
 	}

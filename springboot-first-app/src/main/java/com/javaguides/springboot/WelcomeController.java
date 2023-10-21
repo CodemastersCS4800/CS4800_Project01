@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -47,6 +48,13 @@ public class WelcomeController {
 		return lRepo.findAll(); 
 	}
 	
+	@PostMapping(path="/add")
+	public @ResponseBody Locations addNewLocation(@RequestParam String address, @RequestParam String size, @RequestParam Integer maxCap){
+		Locations l = new Locations();
+		l.setAddress(address);
+		l.setSize(size);
+		l.setMaxCapacity(maxCap);
 
-
+		return lRepo.save(l);
+	}
 }
