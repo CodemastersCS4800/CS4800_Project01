@@ -5,3 +5,4 @@ public class cal {
         return a * b;
     }
 }
+
