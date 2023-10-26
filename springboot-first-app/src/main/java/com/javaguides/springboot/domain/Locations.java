@@ -1,4 +1,3 @@
-
 package com.javaguides.springboot.domains;
 
 import jakarta.persistence.Entity;

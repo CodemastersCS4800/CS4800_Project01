@@ -1,5 +1,6 @@
-package com.javaguides.springboot.model;
+package com.javaguides.springboot.domains;
 
+import java.util.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,23 +12,25 @@ public class Timeline {
 	
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer timeLineID;
+    private Integer timelineID;
 
     private String    startTime;
     private String    endTime;
 
-    public Timeline(Integer timeLineID, String startTime, String endTime) {
-        this.timeLineID = timeLineID;
+    public Timeline() {
+    }
+
+    public Timeline(String startTime, String endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    public Integer getTimeLineID() {
-        return timeLineID;
+    public Integer getTimelineID() {
+        return timelineID;
     }
 
-    public void setTimeLineID(Integer timeLineID) {
-        this.timeLineID = timeLineID;
+    public void setTimelineID(Integer timelineID) {
+        this.timelineID = timelineID;
     }
 
     public String getStartTime() {
@@ -46,13 +49,14 @@ public class Timeline {
         this.endTime = endTime;
     }
 
-
     @Override
     public String toString() {
-        return "Timeline{" +
-                "timeLineID='" + timeLineID + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                '}';
+        StringBuilder sb = new StringBuilder("{");
+        
+        sb.append("\"timelineID\": ").append(timelineID.toString());
+        sb.append(", \"startTime\": \"").append(startTime).append("\"");
+        sb.append(", \"endTime\": \"").append(endTime).append("\"}");
+
+	return sb.toString();
     }
 }

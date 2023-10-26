@@ -50,4 +50,6 @@ create table publicEvent (
     finalFilePath VARCHAR (255)
 );
 
-INSERT INTO Locations(id, address, size, max_capacity) VALUES (1, "hi", 10, "5x5ft");
+INSERT INTO Locations(id, address, size, max_capacity) VALUES (1, "hi", "5x5ft", 10);
+delete FROM Locations WHERE id = 1;
+
