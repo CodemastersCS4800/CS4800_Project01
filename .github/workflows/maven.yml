@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: copy file via ssh key
+    - name: copy Jar file to EC2 via ssh key
       uses: appleboy/scp-action@v0.1.4
       with:
         host: ec2-3-131-141-24.us-east-2.compute.amazonaws.com
