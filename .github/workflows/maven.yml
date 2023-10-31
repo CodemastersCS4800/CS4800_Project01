@@ -41,17 +41,6 @@ jobs:
         source: "target/springboot-first-app-0.0.1-SNAPSHOT.jar"
         target: "~/"
     
-    - name: copy and paste all front end code
-      uses: appleboy.scp-action@v0.1.4
-      with:
-        host: ec2-3-131-141-24.us-east-2.compute.amazonaws.com
-        username: ec2-user
-        port: 22
-        key: ${{ secrets.KEY }}
-        source: "src/main/resources/public"
-        target: "~/"
-
-
     - name: Run commands to start the java server
       uses: appleboy/ssh-action@v1.0.0
       with:
