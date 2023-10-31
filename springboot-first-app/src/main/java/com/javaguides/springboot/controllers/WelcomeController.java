@@ -11,11 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.javaguides.springboot.repositories.LocationsRepo;
-import com.javaguides.springboot.domains.Locations;
 
-
-@Controller
+@RestController
 public class WelcomeController {
 	@GetMapping ("/welcome")
 	public String welcome(){
