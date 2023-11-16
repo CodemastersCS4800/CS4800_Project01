@@ -16,17 +16,18 @@ import com.javaguides.springboot.domains.Timeline;
 
 
 @RestController
+@RequestMapping("/keypoints")
 public class KeypointsController {
 
 	@Autowired	
 	private KeypointsRepo kRepo;
 
-	@GetMapping("/allKeys")
+	@GetMapping("/all")
 	public @ResponseBody Iterable<Keypoints> displayDBElements(){
 		return kRepo.findAll(); 
 	}
 
-	@PostMapping(path="/addKeypoints")
+	@PostMapping(path="/add")
 	public @ResponseBody Keypoints addNewKeypoint(@RequestBody Keypoints k){
 		/*Keypoints k = new Keypoints();
 		k.setTimeStart(start_time);
