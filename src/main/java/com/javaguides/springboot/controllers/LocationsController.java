@@ -15,12 +15,13 @@ import com.javaguides.springboot.domains.Locations;
 
 
 @RestController
+@RequestMapping("/locations")
 public class LocationsController {
 	@Autowired	
 	private LocationsRepo lRepo;
 
 
-	@GetMapping("/allLocs")
+	@GetMapping("/all")
 	public @ResponseBody Iterable<Locations> displayDBElements(){
 		return lRepo.findAll(); 
 	}

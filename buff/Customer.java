@@ -1,15 +1,23 @@
-package com.javaguides.springboot.model;
+package com.javaguides.springboot.domains;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 public class Customer {
 
-    private  long   id;
-    private  String name;
-    private  String email;
+    private Integer  CustomerId;
+    private String name;
+    private String email;
+    private String password;
+    private 
 
 
     //constructor
     public Customer(){
     }
+
     //Everthing Constructor
     public Customer(long id, String name,String email){
         this.name = name;

@@ -14,10 +14,11 @@ public class Locations{
 	private Integer id;
 
 	private String address;
-
 	private String size;
-
 	private Integer maxCapacity;
+
+	// setup one to one relationship with event
+
 
 	public Locations(){
 	}	

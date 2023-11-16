@@ -5,7 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class Timeline {
@@ -16,6 +17,13 @@ public class Timeline {
 
     private String    startTime;
     private String    endTime;
+
+    //set up one to many relationship with keypoints
+    @OneToMany(mappedBy = "timeline")
+    private Set<Keypoints> KeypointsList; 
+
+    //setup one to one with event 
+    
 
     public Timeline() {
     }

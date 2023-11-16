@@ -21,8 +21,9 @@ public class Keypoints {
     private String timeStart;
     private String timeEnd;
     private String description;
-   
-    @ManyToOne (fetch = FetchType.LAZY)
+  
+    //Change to LAZY fetch if DB is struggling
+    @ManyToOne 
     @JoinColumn (name = "timeline_ID")
     private Timeline timeline; 
 
