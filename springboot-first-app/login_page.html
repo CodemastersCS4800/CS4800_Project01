@@ -16,14 +16,18 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-family: Arial, sans-serif;
         }
         .login-container {
             width: 300px;
-            height: 300px;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 20px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
         }
         .login-container form {
             display: flex;
@@ -38,22 +42,42 @@
             border-radius: 5px;
         }
         .login-container button {
-            padding: 10px 20px;
-            background-color: #0077FF;
-            color: #fff;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
             border: none;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .forgot-password {
+            display: block;
+            margin: 10px 0;
+            color: #0077FF;
+            text-decoration: none;
+        }
+        .sign-up {
+            display: block;
+            color: #0077FF;
+            text-decoration: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 <div class="login-container">
-    <h1>Login</h1>
+    <h1>Log In</h1>
     <form>
-        <input type="text" placeholder="Username or Email">
+        <input type="text" placeholder="Username or email address">
         <input type="password" placeholder="Password">
-        <button type="submit">Login</button>
+        <a href="#" class="forgot-password">Forgot password?</a>
+        <button type="submit">Log In</button>
     </form>
+    <a href="#" class="sign-up">Sign up</a>
 </div>
 </body>
 </html>
