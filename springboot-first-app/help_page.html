@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Help Page</title>
   <style>
+    .navbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      background-color: rgba(248, 248, 248, 0.5);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: bold;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -16,7 +35,7 @@
     }
     .container {
       width: 60%;
-      margin-top: 20px;
+      margin-top: 100px;
       background-color: white;
       padding: 20px;
       border-radius: 8px;
@@ -51,7 +70,16 @@
     }
   </style>
 </head>
+
 <body>
+<div class="navbar">
+  <a class="button" href="homepage.html">Home</a>
+  <a class="button" href="view_all_event.html">View All Events</a>
+  <a class="button" href="my_event.html">My Events</a>
+  <a class="button" href="create_an_event.html">+</a>
+  <a class="button" href="help_page.html">?</a>
+  <a class="button" href="login_page.html">Log In</a>
+</div>
 
 <div class="container">
   <h2>Contact Us</h2>
@@ -70,7 +98,18 @@
     <h3>Can I edit an event after creating it?</h3>
     <p>Yes, you can edit your events. Go to your event's detail page and click on the "Edit" button to make changes.</p>
 
-    <!-- Add more FAQs as needed -->
+    <h3>What should I do if I forget my password?</h3>
+    <p>If you forget your password, click on the "Forgot Password" link on the login page and follow the instructions to reset your password.</p>
+
+    <h3>How can I cancel my registration for an event?</h3>
+    <p>To cancel your registration, go to the event's detail page where you registered and click on the "Cancel Registration" button.</p>
+
+    <h3>Is there a way to save events I am interested in?</h3>
+    <p>Yes, you can save events by clicking the "Save" button on the event's detail page. Saved events can be viewed in the "Saved Events" section.</p>
+
+    <h3>How do I contact the event organizer?</h3>
+    <p>You can find the contact information of the event organizer on the event's detail page under the "Organized by" section.</p>
+
   </div>
 </div>
 

@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Events</title>
   <style>
+    .navbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      background-color: rgba(248, 248, 248, 0.5);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: bold;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,6 +36,7 @@
     .search-bar-container {
       width: 80%;
       margin-top: 40px;
+      margin-top: 100px;
       display: flex;
       justify-content: flex-end;
     }
@@ -31,7 +51,7 @@
       width: 80%;
       text-align: center;
       font-size: 28px;
-      margin-top: 20px;
+      margin-top: 40px;
       color: #0077FF;
     }
     .events-container {
@@ -39,7 +59,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
     .event-card {
       background-color: white;
@@ -77,9 +97,20 @@
     .event-info {
       margin-bottom: 5px;
     }
+    .save-button.active {
+      color: #ffa500;
+    }
   </style>
 </head>
 <body>
+<div class="navbar">
+  <a class="button" href="homepage.html">Home</a>
+  <a class="button" href="view_all_event.html">View All Events</a>
+  <a class="button" href="my_event.html">My Events</a>
+  <a class="button" href="create_an_event.html">+</a>
+  <a class="button" href="help_page.html">?</a>
+  <a class="button" href="login_page.html">Log In</a>
+</div>
 
 <div class="search-bar-container">
   <input type="text" class="search-bar" placeholder="Search events...">
@@ -88,7 +119,7 @@
 <h1>All Events</h1>
 
 <div class="events-container">
-  <!-- replace event Id -->
+  <!--replace eventId-->
   <div class="event-card">
     <a href="event_detail_page.html?event_id=123">
       <div class="event-name">Event Name 1</div></a>
@@ -100,7 +131,7 @@
   </div>
 
   <div class="event-card">
-    <!-- replace event Id -->
+    <!--replace eventId-->
     <a href="event_detail_page.html?event_id=123">
       <div class="event-name">Event Name 2</div></a>
     <div class="save-button" onclick="toggleSave(this)">★</div>
@@ -147,6 +178,42 @@
     function toggleSave(element) {
       element.classList.toggle('active');
     }
+      document.querySelector('.search-button').addEventListener('click', function() {
+    const query = document.querySelector('.search-bar').value;
+
+    //replace 'search-endpoint' with the url of server
+    fetch('search-endpoint?query=' + encodeURIComponent(query))
+      .then(response => response.json())
+      .then(data => {
+
+        displaySearchResults(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+
+  function displaySearchResults(data) {
+    //clear existing results
+    const resultsContainer = document.querySelector('.events-container');
+    resultsContainer.innerHTML = '';
+
+    //loop through data and create html for each event
+    data.forEach(event => {
+      const eventCard = document.createElement('div');
+      eventCard.className = 'event-card';
+      eventCard.innerHTML = `
+        <a href="event_detail_page.html?event_id=${event.id}">
+          <div class="event-name">${event.name}</div>
+        </a>
+        <div class="event-info"><strong>Organizer:</strong> ${event.organizer}</div>
+        <div class="event-info"><strong>Date & Time:</strong> ${event.date}</div>
+        <div class="event-info"><strong>Location:</strong> ${event.location}</div>
+        <div class="event-info"><strong>Attendees:</strong> ${event.attendees} people joined</div>
+      `;
+      resultsContainer.appendChild(eventCard);
+    });
+  }
 </script>
 
 </body>

@@ -30,8 +30,7 @@
       padding-bottom: 10px;
       border-bottom: 1px solid #e0e0e0;
     }
-
-    .form-field, .timeline-section {
+    .form-field {
       margin-bottom: 15px;
     }
     label {
@@ -54,21 +53,13 @@
       cursor: pointer;
       font-size: 16px;
       margin: 5px;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
-
+    .cancel-button {
+      background-color: #f0ad4e;
+    }
     .button-group {
       text-align: center;
       margin-top: 20px;
-    }
-    .timeline-group {
-      border: 1px solid #e0e0e0;
-      padding: 10px;
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
-    .timeline-group label {
-      font-size: 14px;
     }
   </style>
 </head>
@@ -76,7 +67,7 @@
 
 <div class="form-container">
   <div class="form-header">Create An Event</div>
-  <form>
+  <form id="eventForm">
     <div class="form-field">
       <label for="eventType">Event Type</label>
       <select id="eventType" name="eventType">
@@ -84,111 +75,50 @@
         <option value="party">Party</option>
       </select>
     </div>
-
     <div class="form-field">
       <label for="eventName">Name of Event</label>
       <input type="text" id="eventName" name="eventName">
     </div>
-
     <div class="form-field">
       <label for="eventDate">Date</label>
       <input type="date" id="eventDate" name="eventDate">
     </div>
-
     <div class="form-field">
       <label for="eventTime">Time</label>
       <input type="time" id="eventTime" name="eventTime">
     </div>
-
     <div class="form-field">
       <label for="location">Location</label>
       <input type="text" id="location" name="location">
     </div>
-
     <div class="form-field">
-      <label for="numberOfAttendants">Number of Attendants</label>
-      <input type="number" id="numberOfAttendants" name="numberOfAttendants">
-    </div>
-
-    <div class="form-field">
-      <label for="attendees">Attendees or Organizer</label>
+      <label for="attendees">Attendees</label>
       <input type="text" id="attendees" name="attendeesOrOrganizer">
     </div>
-
-    <div class="form-field">
-      <label for="locationSize">Location Size</label>
-      <input type="text" id="locationSize" name="locationSize">
+    <div class="button-group">
+      <button type="button" class="button cancel-button" onclick="cancelForm()">Cancel</button>
+      <button type="submit" class="button">Submit</button>
     </div>
-
-    <div class="form-field">
-      <label for="maxCapacity">Max Capacity</label>
-      <input type="number" id="maxCapacity" name="maxCapacity">
-    </div>
-
-    <div class="form-field">
-      <label for="venueType">Open Venue - Type of Location</label>
-      <input type="text" id="venueType" name="venueType" placeholder="convention, park, hall, etc">
-    </div>
-
-    <div id="timelineSection">
-      <h3>Organizational Timeline</h3>
-
-      <div id="timelineContainer">
-
-        <div class="timeline-group">
-          <div class="form-field">
-            <label for="startTime">Start Time</label>
-            <input type="time" name="startTime">
-          </div>
-          <div class="form-field">
-            <label for="endTime">End Time</label>
-            <input type="time" name="endTime">
-          </div>
-          <div class="form-field">
-            <label for="keyPoint">Key Point</label>
-            <input type="text" name="keyPoint">
-          </div>
-          <div class="form-field">
-            <label for="description">Description</label>
-            <textarea name="description"></textarea>
-          </div>
-        </div>
-      </div>
-      <button type="button" class="button" onclick="addKeyPoint()">Add More Key Points</button>
-    </div>
-
-      <div class="form-field">
-        <button type="submit" class="button">Submit</button>
-        <button type="button" class="button">Save Changes</button>
-      </div>
   </form>
 </div>
 
 <script>
-  function addKeyPoint() {
-    var timelineContainer = document.getElementById('timelineContainer');
+  document.getElementById('eventForm').addEventListener('submit', function(event) {
+    event.preventDefault(); //prevent the default form submission
 
-    var timelineGroup = document.createElement('div');
-    timelineGroup.className = 'timeline-group';
-    timelineGroup.innerHTML = `
-      <div class="form-field">
-        <label>Start Time</label>
-        <input type="time" name="startTime">
-      </div>
-      <div class="form-field">
-        <label>End Time</label>
-        <input type="time" name="endTime">
-      </div>
-      <div class="form-field">
-        <label>Key Point</label>
-        <input type="text" name="keyPoint">
-      </div>
-      <div class="form-field">
-        <label>Description</label>
-        <textarea name="description"></textarea>
-      </div>
-    `;
-    timelineContainer.appendChild(timelineGroup);
+    //gather the form data
+    const formData = new FormData(event.target);
+
+    for (let [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
+
+    window.location.href = 'homepage.html';
+
+  function cancelForm() {
+    var form = document.getElementById('eventForm');
+    form.reset();
+    window.history.back();
   }
 </script>
 

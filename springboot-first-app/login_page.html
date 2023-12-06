@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
+        .navbar {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(248, 248, 248, 0.5);
+        }
+        .navbar a {
+          text-decoration: none;
+          color: black;
+          display: inline-block;
+          margin-left: 10px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          font-size: 16px;
+          background-color: white;
+          font-weight: bold;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -69,6 +88,14 @@
     </style>
 </head>
 <body>
+<div class="navbar">
+    <a class="button" href="homepage.html">Home</a>
+    <a class="button" href="view_all_event.html">View All Events</a>
+    <a class="button" href="my_event.html">My Events</a>
+    <a class="button" href="create_an_event.html">+</a>
+    <a class="button" href="help_page.html">?</a>
+    <a class="button" href="login_page.html">Log In</a>
+</div>
 <div class="login-container">
     <h1>Log In</h1>
     <form>

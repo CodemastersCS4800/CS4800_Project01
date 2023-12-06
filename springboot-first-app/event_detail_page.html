@@ -15,16 +15,29 @@
             align-items: center;
         }
         .container {
-            width: 80%;
+            width: 50%;
             margin: 20px auto;
-            background-color: #fff;
             padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
         }
+
         .back-button {
-            margin-bottom: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
             cursor: pointer;
+
+        }
+
+        .edit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+
         }
         h1 {
             margin-bottom: 20px;
@@ -60,7 +73,7 @@
         }
 
         .timeline-event {
-            margin-bottom: 15px; /* space between events */
+            margin-bottom: 15px;
         }
         .timeline-event {
             margin-bottom: 15px;
@@ -68,18 +81,18 @@
 
         .event-time {
             font-weight: bold;
-            display: inline-block; /* set time as inline-block */
-            margin-right: 5px; /* spacing between time and key point */
+            display: inline-block;
+            margin-right: 5px;
         }
 
         .event-key-point {
-            display: inline-block; /* Set key point as inline-block */
+            display: inline-block;
             font-weight: normal;
             min-width: 100px;
         }
         .event-description {
-            display: block; /* event description as block */
-            margin-left: calc(100px + 5px); /* adjust the left margin to align with key point */
+            display: block;
+            margin-left: calc(100px + 5px);
         }
         .organizer-info {
             margin: 20px 0;
@@ -106,6 +119,15 @@
         .organizer-contact a:hover {
             text-decoration: underline;
         }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .event-section {
+            margin-bottom: 20px;
+        }
 
 
     </style>
@@ -113,70 +135,84 @@
 <body>
 
 <div class="container">
-    <div class="back-button">← Back</div>
+
+    <div class="back-button" onclick="goBack()">← Back</div>
     <h1>Event Name</h1>
+    <button class="button edit-button" onclick="editEvent('123')">Edit</button>
 
-    <div class="event-info">Organizer: John</div>
-    <div class="event-info">Date and Time: Feb 10, 2023, 6:00 PM</div>
-    <div class="event-info">Location: Central Park</div>
-    <div class="event-info">Number of People Joined: 150</div>
+    <section class="event-section" id="general-info">
+        <div class="event-info">Organizer: John</div>
+        <div class="event-info">Date and Time: Feb 10, 2023, 6:00 PM</div>
+        <div class="event-info">Location: Central Park</div>
+        <div class="event-info">Number of People Joined: 150</div>
+    </section>
 
-    <button class="button save-button" onclick="saveEvent('123')">Save</button> <!-- replace 123 with the eventID -->
-    <button class="button join-button" onclick="joinEvent('123')">Join</button> <!-- Replace 123 with the eventID -->
-    <button class="button share-button" onclick="shareEvent()">Share</button>
+    <section class="event-section" id="about-event">
+        <h2 class="sub-header">About this Event</h2>
+        <p>Description of the event goes here.</p>
+    </section>
 
+    <section class="event-section" id="event-timeline">
 
-    <h2 class="sub-header">About this Event</h2>
-    <p>Description of the event goes here. </p>
+        <div class="timeline-container">
+            <div class="timeline-container">
+                <h2 class="sub-header">Timeline</h2>
+                <ul class="timeline-list">
+                    <li class="timeline-event">
+                        <span class="event-time">10:00-10:10:</span>
+                        <span class="event-key-point">Key Point 1</span>
+                        <div class="event-description">Description of Key Point 1</div>
+                    </li>
 
+                    <li class="timeline-event">
+                        <span class="event-time">10:20-10:30:</span>
+                        <span class="event-key-point">Key Point 2</span>
+                        <div class="event-description">Description of Key Point 2</div>
+                    </li>
 
-    <div class="timeline-container">
-        <h2 class="sub-header">Timeline</h2>
-        <ul class="timeline-list">
-            <li class="timeline-event">
-                <span class="event-time">10:00-10:10:</span>
-                <span class="event-key-point">Key Point 1</span>
-                <div class="event-description">Description of Key Point 1</div>
-            </li>
+                    <li class="timeline-event">
+                        <span class="event-time">10:30-10:50:</span>
+                        <span class="event-key-point">Key Point 3</span>
+                        <div class="event-description">Description of Key Point 3</div>
+                    </li>
 
-            <li class="timeline-event">
-                <span class="event-time">10:20-10:30:</span>
-                <span class="event-key-point">Key Point 2</span>
-                <div class="event-description">Description of Key Point 2</div>
-            </li>
+                    <li class="timeline-event">
+                        <span class="event-time">10:30-10:50:</span>
+                        <span class="event-key-point">Key Point 4</span>
+                        <div class="event-description">Description of Key Point 4</div>
+                    </li>
 
-            <li class="timeline-event">
-                <span class="event-time">10:30-10:50:</span>
-                <span class="event-key-point">Key Point 3</span>
-                <div class="event-description">Description of Key Point 3</div>
-            </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-            <li class="timeline-event">
-                <span class="event-time">10:30-10:50:</span>
-                <span class="event-key-point">Key Point 4</span>
-                <div class="event-description">Description of Key Point 4</div>
-            </li>
+    <section class="event-section" id="organizer-info">
+        <h2 class="sub-header">Organized by</h2>
+        <div class="organizer-info">
+            <div class="organizer-name">Organizer: </div>
+            <div class="organizer-description">description of some organizer company</div>
+            <div class="organizer-contact">Contact Email: <a href="mailto:example@gmail.com">example@gmail.com</a></div>
+        </div>
+    </section>
 
-        </ul>
+    <!--button-->
+    <div class="action-buttons">
+        <button class="button save-button" onclick="saveEvent('123')">Save</button>
+        <button class="button join-button" onclick="joinEvent('123')">Join</button>
+        <button class="button share-button" onclick="shareEvent()">Share</button>
     </div>
 
 
-    <h2 class="sub-header">Organized by</h2>
-    <div class="organizer-info">
-        <div class="organizer-name">Organizer: John</div>
-        <div class="organizer-description">description of some organizer company</div>
-        <div class="organizer-contact">Contact Email: <a href="mailto:john@gmail.com">john@gmail.com</a></div>
-    </div>
 
 </div>
 
 <script>
     window.onload = function() {
-        //get URL parameters
+        //get url parameter
         const params = new URLSearchParams(window.location.search);
         const eventId = params.get('event_id'); // "123" in this code
-
-        //use eventId to load event details
+        //use eventId to load event detail
         //make a request to get event data
     };
     function shareEvent() {
@@ -188,7 +224,6 @@
         });
     }
     function joinEvent(eventId) {
-        //send a request to the server to join the event
         alert('You have successfully joined the event!');
     }
     function saveEvent(eventId) {
@@ -205,7 +240,12 @@
             alert('Event already saved.');
         }
     }
-
+    function editEvent(eventId) {
+        window.location.href = 'edit_event_page.html?event_id=' + eventId;
+    }
+    function goBack() {
+        window.history.back();
+    }
 
 </script>
 
