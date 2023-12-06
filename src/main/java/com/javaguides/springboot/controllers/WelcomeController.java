@@ -12,8 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-@RestController
+@Controller
 public class WelcomeController {
+	
+	@GetMapping ("/")
+	public String home(){
+		return "homepage.html";
+	}
+	
 	@GetMapping ("/welcome")
 	public String welcome(){
 		return "Welcome to Team Code Masters!!!";
