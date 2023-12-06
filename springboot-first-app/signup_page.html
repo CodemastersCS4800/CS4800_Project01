@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <style>
         body {
             margin: 0;
             padding: 0;
@@ -18,7 +18,7 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
-        .login-container {
+        .signup-container {
             width: 300px;
             padding: 40px;
             background-color: rgba(255, 255, 255, 0.9);
@@ -26,22 +26,22 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        .login-container h1 {
+        .signup-container h1 {
             margin-bottom: 20px;
         }
-        .login-container form {
+        .signup-container form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .login-container input {
+        .signup-container input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .login-container button {
+        .signup-container button {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -51,16 +51,10 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .login-container button:hover {
+        .signup-container button:hover {
             background-color: #45a049;
         }
-        .forgot-password {
-            display: block;
-            margin: 10px 0;
-            color: #0077FF;
-            text-decoration: none;
-        }
-        .sign-up {
+        .login-link {
             display: block;
             color: #0077FF;
             text-decoration: none;
@@ -69,15 +63,15 @@
     </style>
 </head>
 <body>
-<div class="login-container">
-    <h1>Log In</h1>
-    <form>
-        <input type="text" placeholder="Username or email address">
-        <input type="password" placeholder="Password">
-        <a href="reset_password_page.html" class="forgot-password">Forgot password?</a>
-        <button type="submit">Log In</button>
-    </form>
-    <a href="signup_page.html" class="sign-up">Sign up</a>
+<div class="signup-container">
+  <h1>Sign Up</h1>
+  <form>
+    <input type="text" placeholder="Username">
+    <input type="email" placeholder="Email Address">
+    <input type="password" placeholder="Password">
+    <button type="submit">Sign Up</button>
+  </form>
+  <a href="login_page.html" class="login-link">Already have an account? Log In</a>
 </div>
 </body>
 </html>

@@ -118,8 +118,22 @@
   <h2 class="sub-header">Events Created by You</h2>
   <div class="event-grid">
     <div class="event-card">
-      <button class="edit-button" onclick="editEvent(this)">Edit</button>
-      <div class="event-name">Event Name 1</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div>
+      </a>
+      <button onclick="window.location.href='edit_event_page.html?event_id=123'">Edit</button>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 2</div>
+      </a>
+      <button onclick="window.location.href='edit_event_page.html?event_id=123'">Edit</button>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
@@ -127,21 +141,15 @@
     </div>
 
     <div class="event-card">
-      <button class="edit-button" onclick="editEvent(this)">Edit</button>
-      <div class="event-name">Event Name 2</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 3</div>
+      </a>
+      <button onclick="window.location.href='edit_event_page.html?event_id=123'">Edit</button>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
       <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
-    </div>
 
-    <div class="event-card">
-      <button class="edit-button" onclick="editEvent(this)">Edit</button>
-      <div class="event-name">Event Name 3</div>
-      <div class="event-info"><strong>Organizer:</strong> Alice</div>
-      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
-      <div class="event-info"><strong>Location:</strong> Central Park</div>
-      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
     </div>
 
   </div>
@@ -149,7 +157,8 @@
   <h2 class="sub-header">Registered Events</h2>
   <div class="event-grid">
     <div class="event-card">
-      <div class="event-name">Event Name 1</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
@@ -157,7 +166,8 @@
     </div>
 
     <div class="event-card">
-      <div class="event-name">Event Name 2</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 2</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
@@ -165,7 +175,8 @@
     </div>
 
     <div class="event-card">
-      <div class="event-name">Event Name 3</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 3</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
@@ -177,30 +188,33 @@
   <h2 class="sub-header">Saved Events</h2>
   <div class="event-grid">
     <div class="event-card">
-      <div class="save-button" onclick="toggleSave(this)">★</div>
-      <div class="event-name">Event Name 1</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
       <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+      <button class="save-button" onclick="toggleSave(this)">★</button>
     </div>
 
     <div class="event-card">
-      <div class="save-button" onclick="toggleSave(this)">★</div>
-      <div class="event-name">Event Name 2</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
       <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+      <button class="save-button" onclick="toggleSave(this)">★</button>
     </div>
 
     <div class="event-card">
-      <div class="save-button" onclick="toggleSave(this)">★</div>
-      <div class="event-name">Event Name 3</div>
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
       <div class="event-info"><strong>Organizer:</strong> Alice</div>
       <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
       <div class="event-info"><strong>Location:</strong> Central Park</div>
       <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+      <button class="save-button" onclick="toggleSave(this)">★</button>
     </div>
 
   </div>
@@ -208,10 +222,12 @@
 
 
 <script>
-    function editEvent(element) {
+    function editEvent(eventId) {
+        window.location.href = 'edit_event_page.html?event_id=' + eventId;
     }
+
     function toggleSave(element) {
-      element.classList.toggle('active');
+        element.classList.toggle('active');
     }
 </script>
 

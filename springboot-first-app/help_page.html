@@ -29,14 +29,25 @@
       color: #666;
       line-height: 1.6;
     }
-    .faq {
-      margin-top: 20px;
-    }
     .faq h3 {
       color: #444;
     }
     .faq p {
       margin-top: 5px;
+    }
+    .email-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .email-list li {
+      margin-bottom: 10px;
+    }
+    .email-list a {
+      color: #0077FF;
+      text-decoration: none;
+    }
+    .email-list a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -44,20 +55,22 @@
 
 <div class="container">
   <h2>Contact Us</h2>
-  <p>If you have any questions or need assistance, feel free to reach out our team.</p>
-  <p>Email? Brayden</p>
-  <p>Email? Charles</p>
-  <p>theresalin39@gmail.com</p>
+  <p>If you have any questions or need assistance, feel free to reach out to our team.</p>
+  <ul class="email-list">
+    <li><a href="mailto:bhtani@cpp.edu">bhtani@cpp.edu</a></li>
+    <li><a href="mailto:trouilliere@gmail.com">trouilliere@gmail.com</a></li>
+    <li><a href="mailto:theresalin39@gmail.com">theresalin39@gmail.com</a></li>
+  </ul>
 
   <div class="faq">
     <h2>FAQ</h2>
-
     <h3>How do I create a new event?</h3>
-    <p>To create a new event, click on the "+" button on the top right corner of the homepage. Fill out the event details in the form and submit.</p>
+    <p>To create a new event, click on the "+" button in the top right corner of the homepage. Fill out the event details in the form and submit.</p>
 
     <h3>Can I edit an event after creating it?</h3>
     <p>Yes, you can edit your events. Go to your event's detail page and click on the "Edit" button to make changes.</p>
 
+    <!-- Add more FAQs as needed -->
   </div>
 </div>
 
