@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WelcomeController {
-	
+/*	
 	@GetMapping ("/")
 	public String home(){
 		return "homepage.html";
 	}
-	
+*/	
 	@GetMapping ("/welcome")
 	public String welcome(){
 		return "Welcome to Team Code Masters!!!";
