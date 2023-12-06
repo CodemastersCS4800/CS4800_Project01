@@ -9,7 +9,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@JsonIdentityInfo (
+	generator = ObjectIdGenerators.PropertyGenerator.class,
+	property = "keypoint_ID"
+)
 @Entity
 @Table (name="keypoint")
 public class Keypoints {
@@ -22,9 +32,9 @@ public class Keypoints {
     private String timeEnd;
     private String description;
   
-    //Change to LAZY fetch if DB is struggling
-    @ManyToOne 
+    @ManyToOne(fetch = FetchType.LAZY) 
     @JoinColumn (name = "timeline_ID")
+    @JsonIgnore
     private Timeline timeline; 
 
     public Keypoints() {
@@ -84,7 +94,6 @@ public class Keypoints {
         sb.append(", \"timeStart\": \"").append(timeStart).append("\"");
         sb.append(", \"timeEnd\": \"").append(timeEnd).append("\"}");
         sb.append(", \"description\": \"").append(description).append("\"}");
-        sb.append(", \"timelineID\": ").append(timeline.toString());
 
 	return sb.toString();
     }
