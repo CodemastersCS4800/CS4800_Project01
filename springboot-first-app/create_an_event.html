@@ -103,23 +103,25 @@
 </div>
 
 <script>
-  document.getElementById('eventForm').addEventListener('submit', function(event) {
-    event.preventDefault(); //prevent the default form submission
+document.getElementById('eventForm').addEventListener('submit', function(event) {
+  event.preventDefault(); //prevent the default form submission
 
-    //gather the form data
-    const formData = new FormData(event.target);
+  //gather the form data
+  const formData = new FormData(event.target);
 
-    for (let [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-
-    window.location.href = 'homepage.html';
-
-  function cancelForm() {
-    var form = document.getElementById('eventForm');
-    form.reset();
-    window.history.back();
+  for (let [key, value] of formData.entries()) {
+    console.log(key, value);
   }
+
+  window.location.href = 'homepage.html';
+});
+
+function cancelForm() {
+  var form = document.getElementById('eventForm');
+  form.reset();
+  window.history.back();
+}
+
 </script>
 
 </body>
