@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Events</title>
+  <style>
+        .navbar {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(248, 248, 248, 0.5);
+        }
+        .navbar a {
+          text-decoration: none;
+          color: black;
+          display: inline-block;
+          margin-left: 10px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          font-size: 16px;
+          background-color: white;
+          font-weight: bold;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        .search-bar-container, .events-container {
+            width: 80%;
+            margin: 40px auto;
+            margin-top: 100px;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+        h1 {
+            width: 80%;
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
+            color: #0077FF;
+
+        }
+        .sub-header {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 10px;
+            color: #333;
+
+        }
+        .sub-header {
+            font-size: 24px;
+            color: #333;
+            margin: 10px 0;
+            text-align: left;
+
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .event-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            text-align: center;
+            position: relative;
+        }
+        .edit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #ccc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .edit-button:hover {
+            background-color: #bbb;
+        }
+        .save-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+            background-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+            border: 1px solid #ccc;
+        }
+        .save-button.active {
+          color: #ffa500;
+        }
+
+        .event-name {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .event-info {
+          margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+  <a class="button" href="homepage.html">Home</a>
+  <a class="button" href="view_all_event.html">View All Events</a>
+  <a class="button" href="my_event.html">My Events</a>
+  <a class="button" href="create_an_event.html">+</a>
+  <a class="button" href="help_page.html">?</a>
+  <a class="button" href="login_page.html">Log In</a>
+</div>
+<div class="search-bar-container">
+  <input type="text" class="search-bar" placeholder="Search My Events...">
+</div>
+
+<h1>My Events</h1>
+
+
+<div class="events-container">
+  <h2 class="sub-header">Events Created by You</h2>
+  <div class="event-grid">
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div>
+      </a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 2</div>
+      </a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 3</div>
+      </a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+
+    </div>
+
+  </div>
+
+  <h2 class="sub-header">Registered Events</h2>
+  <div class="event-grid">
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 2</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 3</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+  </div>
+
+  <h2 class="sub-header">Saved Events</h2>
+  <div class="event-grid">
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+    <div class="event-card">
+      <a href="event_detail_page.html?event_id=123">
+        <div class="event-name">Event Name 1</div></a>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+    function editEvent(eventId) {
+        window.location.href = 'edit_event_page.html?event_id=' + eventId;
+    }
+
+    function toggleSave(element) {
+        element.classList.toggle('active');
+    }
+      document.querySelector('.search-button').addEventListener('click', function() {
+    const query = document.querySelector('.search-bar').value;
+
+    //replace 'search-endpoint' to the url of server
+    fetch('search-endpoint?query=' + encodeURIComponent(query))
+      .then(response => response.json())
+      .then(data => {
+
+        displaySearchResults(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
+
+  function displaySearchResults(data) {
+    //clear existing results
+    const resultsContainer = document.querySelector('.events-container');
+    resultsContainer.innerHTML = '';
+
+    //loop through data and create html for each event
+    data.forEach(event => {
+      const eventCard = document.createElement('div');
+      eventCard.className = 'event-card';
+      eventCard.innerHTML = `
+        <a href="event_detail_page.html?event_id=${event.id}">
+          <div class="event-name">${event.name}</div>
+        </a>
+        <div class="event-info"><strong>Organizer:</strong> ${event.organizer}</div>
+        <div class="event-info"><strong>Date & Time:</strong> ${event.date}</div>
+        <div class="event-info"><strong>Location:</strong> ${event.location}</div>
+        <div class="event-info"><strong>Attendees:</strong> ${event.attendees} people joined</div>
+      `;
+      resultsContainer.appendChild(eventCard);
+    });
+  }
+</script>
+
+</body>
+</html>

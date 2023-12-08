@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .navbar {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 20px;
+          background-color: rgba(248, 248, 248, 0.5);
+        }
+        .navbar a {
+          text-decoration: none;
+          color: black;
+          display: inline-block;
+          margin-left: 10px;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 20px;
+          font-size: 16px;
+          background-color: white;
+          font-weight: bold;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://www.acquisition-international.com/wp-content/uploads/2022/03/Event-Planning.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            width: 300px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+        .forgot-password {
+            display: block;
+            margin: 10px 0;
+            color: #0077FF;
+            text-decoration: none;
+        }
+        .sign-up {
+            display: block;
+            color: #0077FF;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a class="button" href="homepage.html">Home</a>
+    <a class="button" href="view_all_event.html">View All Events</a>
+    <a class="button" href="my_event.html">My Events</a>
+    <a class="button" href="create_an_event.html">+</a>
+    <a class="button" href="help_page.html">?</a>
+    <a class="button" href="login_page.html">Log In</a>
+</div>
+<div class="login-container">
+    <h1>Log In</h1>
+    <form>
+        <input type="text" placeholder="Username", name = "name">
+        <input type="password" placeholder="Password", name = "pass">
+        <a href="reset_password_page.html" class="forgot-password">Forgot password?</a>
+        <button type="submit" class = "button">Log In</button>
+    </form>
+    <a href="signup_page.html" class="sign-up">Sign up</a>
+</div>
+</body>
+</html>

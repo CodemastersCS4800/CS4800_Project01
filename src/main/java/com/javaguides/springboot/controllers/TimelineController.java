@@ -21,7 +21,7 @@ import com.javaguides.springboot.domains.Events;
 
 
 @RestController
-@RequestMapping("/timeline")
+@RequestMapping("/api/timeline")
 public class TimelineController {
 
 	@Autowired	

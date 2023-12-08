@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Detail</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+
+        }
+
+        .edit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .sub-header {
+            font-size: 20px;
+            color: #333;
+            margin: 20px 0;
+        }
+        .event-info {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save-button, .join-button, .share-button {
+            background-color: #0077FF;
+            color: white;
+        }
+
+        .timeline-container {
+            margin: 20px 0;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-event {
+            margin-bottom: 15px;
+        }
+        .timeline-event {
+            margin-bottom: 15px;
+        }
+
+        .event-time {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .event-key-point {
+            display: inline-block;
+            font-weight: normal;
+            min-width: 100px;
+        }
+        .event-description {
+            display: block;
+            margin-left: calc(100px + 5px);
+        }
+        .organizer-info {
+            margin: 20px 0;
+        }
+
+        .organizer-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .organizer-description {
+            margin-bottom: 5px;
+        }
+
+        .organizer-contact {
+            margin-bottom: 5px;
+        }
+
+        .organizer-contact a {
+            color: #0077FF;
+            text-decoration: none;
+        }
+
+        .organizer-contact a:hover {
+            text-decoration: underline;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .event-section {
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="back-button" onclick="goBack()">← Back</div>
+    <h1>Event Name</h1>
+    <button class="button edit-button" onclick="editEvent('123')">Edit</button>
+
+    <section class="event-section" id="general-info">
+        <div class="event-info">Organizer: John</div>
+        <div class="event-info">Date and Time: Feb 10, 2023, 6:00 PM</div>
+        <div class="event-info">Location: Central Park</div>
+        <div class="event-info">Number of People Joined: 150</div>
+    </section>
+
+    <section class="event-section" id="about-event">
+        <h2 class="sub-header">About this Event</h2>
+        <p>Description of the event goes here.</p>
+    </section>
+
+    <section class="event-section" id="event-timeline">
+
+        <div class="timeline-container">
+            <div class="timeline-container">
+                <h2 class="sub-header">Timeline</h2>
+                <ul class="timeline-list">
+                    <li class="timeline-event">
+                        <span class="event-time">10:00-10:10:</span>
+                        <span class="event-key-point">Key Point 1</span>
+                        <div class="event-description">Description of Key Point 1</div>
+                    </li>
+
+                    <li class="timeline-event">
+                        <span class="event-time">10:20-10:30:</span>
+                        <span class="event-key-point">Key Point 2</span>
+                        <div class="event-description">Description of Key Point 2</div>
+                    </li>
+
+                    <li class="timeline-event">
+                        <span class="event-time">10:30-10:50:</span>
+                        <span class="event-key-point">Key Point 3</span>
+                        <div class="event-description">Description of Key Point 3</div>
+                    </li>
+
+                    <li class="timeline-event">
+                        <span class="event-time">10:30-10:50:</span>
+                        <span class="event-key-point">Key Point 4</span>
+                        <div class="event-description">Description of Key Point 4</div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-section" id="organizer-info">
+        <h2 class="sub-header">Organized by</h2>
+        <div class="organizer-info">
+            <div class="organizer-name">Organizer: </div>
+            <div class="organizer-description">description of some organizer company</div>
+            <div class="organizer-contact">Contact Email: <a href="mailto:example@gmail.com">example@gmail.com</a></div>
+        </div>
+    </section>
+
+    <!--button-->
+    <div class="action-buttons">
+        <button class="button save-button" onclick="saveEvent('123')">Save</button>
+        <button class="button join-button" onclick="joinEvent('123')">Join</button>
+        <button class="button share-button" onclick="shareEvent()">Share</button>
+    </div>
+
+
+
+</div>
+
+<script src="scripts/event_detail_script.js"></script>
+
+</body>
+</html>

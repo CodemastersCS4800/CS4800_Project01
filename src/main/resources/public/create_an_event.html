@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+    .form-container {
+      width: 60%;
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .form-header {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .form-field {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 5px;
+    }
+    .cancel-button {
+      background-color: #f0ad4e;
+    }
+    .button-group {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <div class="form-header">Create An Event</div>
+  <form id="eventForm">
+    <div class="form-field">
+      <label for="eventType">Event Type</label>
+      <select id="eventType" name="eventType">
+        <option value="event">Event</option>
+        <option value="party">Party</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="eventName">Name of Event</label>
+      <input type="text" id="eventName" name="name">
+    </div>
+    <div class="form-field">
+      <label for="eventDate">Date</label>
+      <input type="date" id="eventDate" name="date">
+    </div>
+    <div class="form-field">
+      <label for="eventTime">Start Time</label>
+      <input type="time" id="eventTime" name="startTime">
+    </div>
+    <div class="form-field">
+      <label for="eventTime">End Time</label>
+      <input type="time" id="eventTime" name="endTime">
+    </div>
+    <div class="form-field">
+      <label for="location">Location</label>
+      <input type="text" id="location" name="address">
+    </div>
+    <div class="form-field">
+      <label for="attendees">Attendees</label>
+      <input type="text" id="attendees" name="attendees">
+    </div>
+    <div class="button-group">
+      <button type="button" class="button cancel-button" onclick="cancelForm()">Cancel</button>
+      <button type="submit" class="button">Submit</button>
+    </div>
+  </form>
+</div>
+  <script src="scripts/create_event_script.js"></script>
+</body>
+</html>

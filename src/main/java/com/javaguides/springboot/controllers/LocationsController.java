@@ -19,7 +19,7 @@ import com.javaguides.springboot.domains.Events;
 
 
 @RestController
-@RequestMapping("/locations")
+@RequestMapping("/api/locations")
 public class LocationsController {
 	
 	@Autowired	

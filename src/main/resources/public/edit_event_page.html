@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        input[type="time"],
+        textarea,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+        .submit-button {
+            background-color: #5cb85c;
+            color: white;
+        }
+        .cancel-button {
+            background-color: #f0ad4e;
+            color: white;
+            margin-right: 10px;
+        }
+        .add-key-point-button {
+            background-color: #337ab7;
+            color: white;
+            margin-top: 10px;
+            align-self: center;
+        }
+        .key-points-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+</style>
+</head>
+<body>
+
+<form id="editEventForm">
+    <!--event name-->
+    <div class="form-group">
+        <label for="eventName">Event name:</label>
+        <input type="text" id="eventName" name="eventName" value="Name 1">
+    </div>
+
+    <!--organizer-->
+    <div class="form-group">
+        <label for="organizer">Organizer:</label>
+        <input type="text" id="organizer" name="organizer" value="John">
+    </div>
+
+    <!--date and time-->
+    <div class="form-group">
+        <label for="dateAndTime">Date and Time:</label>
+        <input type="datetime-local" id="dateAndTime" name="dateAndTime" value="2023-02-10T18:00">
+    </div>
+
+    <!--location-->
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="Central Park">
+    </div>
+
+    <!--description of event-->
+    <div class="form-group">
+        <label for="eventDescription">Description of the Event:</label>
+        <textarea id="eventDescription" name="eventDescription">Context that listed under "About this event" in event detail page</textarea>
+    </div>
+
+    <!--timeline-->
+    <div class="key-points-container">
+        <h2>Key points of timeline:</h2>
+        <div id="keyPointsList">
+            <div class="form-group">
+                <label for="startTime">Key point start time:</label>
+                <input type="time" id="startTime" name="startTime" value="10:00">
+            </div>
+
+            <div class="form-group">
+                <label for="endTime">Key point end time:</label>
+                <input type="time" id="endTime" name="endTime" value="10:10">
+            </div>
+            <div class="form-group">
+                <label for="keyPoint">Key point:</label>
+                <input type="text" id="keyPoint" name="keyPoint" value="Key point 1">
+            </div>
+            <div class="form-group">
+                <label for="keyPointDescription">Description of key point:</label>
+                <textarea id="keyPointDescription" name="keyPointDescription">Description of Key Point 1</textarea>
+            </div>
+        </div>
+
+            <button type="button" class="add-key-point-button" onclick="addKeyPoint()">Add more key points</button>
+        </div>
+
+    <!--description of organizer-->
+    <div class="form-group">
+        <label for="organizerDescription">Description of organizer:</label>
+        <textarea id="organizerDescription" name="organizerDescription">Description of some organizer company</textarea>
+    </div>
+
+    <!--contact email-->
+    <div class="form-group">
+        <label for="contactEmail">Contact Email:</label>
+        <input type="email" id="contactEmail" name="contactEmail" value="john@gmail.com">
+    </div>
+
+    <!-- submit and cancel -->
+    <div class="button-container">
+        <button type="button" class="cancel-button" onclick="cancelEdit()">Cancel</button>
+        <button type="submit" class="submit-button">Submit Changes</button>
+    </div>
+</form>
+
+<script>
+  document.getElementById('editEventForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    //send data to the server
+    fetch('endpoint to update event', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      alert('Event updated successfully!');
+      window.location.href = 'event_detail_page.html';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was a problem with your submission: ' + error.message);
+    });
+  });
+
+    function addKeyPoint() {
+        var keyPointsList = document.getElementById('keyPointsList');
+        var index = document.getElementsByClassName('form-group').length;
+
+        var keyPointHTML = `
+            <div class="form-group">
+                <label for="startTime${index}">Start time:</label>
+                <input type="time" id="startTime${index}" name="startTime[]">
+            </div>
+            <div class="form-group">
+                <label for="endTime${index}">End time:</label>
+                <input type="time" id="endTime${index}" name="endTime[]">
+            </div>
+            <div class="form-group">
+                <label for="keyPoint${index}">Key point:</label>
+                <input type="text" id="keyPoint${index}" name="keyPoint[]">
+            </div>
+            <div class="form-group">
+                <label for="keyPointDescription${index}">Description of key point:</label>
+                <textarea id="keyPointDescription${index}" name="keyPointDescription[]"></textarea>
+            </div>`;
+        keyPointsList.insertAdjacentHTML('beforeend', keyPointHTML);
+    }
+
+    function cancelEdit() {
+        window.history.back();
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Events</title>
+  <style>
+    .navbar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      background-color: rgba(248, 248, 248, 0.5);
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      display: inline-block;
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      background-color: white;
+      font-weight: bold;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+    .search-bar-container {
+      width: 80%;
+      margin-top: 40px;
+      margin-top: 100px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .search-bar {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      font-size: 18px;
+    }
+    h1 {
+      width: 80%;
+      text-align: center;
+      font-size: 28px;
+      margin-top: 40px;
+      color: #0077FF;
+    }
+    .events-container {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      margin-top: 40px;
+    }
+    .event-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .save-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #ccc;
+      background-color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+      border: 1px solid #ccc;
+    }
+    .save-button.active {
+      color: #ffa500;
+    }
+
+    .event-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .event-info {
+      margin-bottom: 5px;
+    }
+    .save-button.active {
+      color: #ffa500;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <a class="button" href="homepage.html">Home</a>
+  <a class="button" href="view_all_event.html">View All Events</a>
+  <a class="button" href="my_event.html">My Events</a>
+  <a class="button" href="create_an_event.html">+</a>
+  <a class="button" href="help_page.html">?</a>
+  <a class="button" href="login_page.html">Log In</a>
+</div>
+
+<div class="search-bar-container">
+  <input type="text" class="search-bar" placeholder="Search events...">
+</div>
+
+<h1>All Events</h1>
+
+<div class="events-container">
+  <!--replace eventId-->
+  <div class="event-card">
+    <a href="event_detail_page.html?event_id=123">
+      <div class="event-name">Event Name 1</div></a>
+      <div class="save-button" onclick="toggleSave(this)">★</div>
+      <div class="event-info"><strong>Organizer:</strong> Alice</div>
+      <div class="event-info"><strong>Date & Time:</strong> Feb 10, 2023, 6:00 PM</div>
+      <div class="event-info"><strong>Location:</strong> Central Park</div>
+      <div class="event-info"><strong>Attendees:</strong> 150 people joined</div>
+  </div>
+
+
+</div>
+
+
+<script src=scripts/view_all_events_script.js></script>
+
+</body>
+</html>

@@ -20,7 +20,7 @@ import com.javaguides.springboot.domains.Timeline;
 
 
 @RestController
-@RequestMapping("/keypoints")
+@RequestMapping("/api/keypoints")
 public class KeypointsController {
 
 	@Autowired	

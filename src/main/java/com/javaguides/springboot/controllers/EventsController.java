@@ -24,7 +24,7 @@ import com.javaguides.springboot.domains.Customer;
 
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping("/api/events")
 public class EventsController {
 
 	@Autowired	

@@ -20,7 +20,7 @@ import com.javaguides.springboot.domains.Customer;
 
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/api/customer")
 public class CustomerController {
 
 	@Autowired
