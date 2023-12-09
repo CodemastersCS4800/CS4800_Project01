@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\CustomerRepo.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\controllers\CustomerController.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\domain\Timeline.java
@@ -9,9 +10,20 @@ C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\TimelineRepo.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\SpringbootFirstAppApplication.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\LocationsRepo.java
+=======
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\TimelineRepo.java
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\domain\Timeline.java
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\controllers\TimelineController.java
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\SpringbootFirstAppApplication.java
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\LocationsRepo.java
+C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\controllers\WelcomeController.java
+>>>>>>> master
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\controllers\KeypointsController.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\controllers\LocationsController.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\KeypointsRepo.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\domain\Keypoints.java
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\domain\Locations.java
+<<<<<<< HEAD
 C:\Users\kickt\Desktop\CS4800_Project01\src\main\java\com\javaguides\springboot\repositories\EventsRepo.java
+=======
+>>>>>>> master

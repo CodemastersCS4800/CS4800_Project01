@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\javaguides\springboot\controllers\CustomerController.class
 com\javaguides\springboot\repositories\EventsRepo.class
 com\javaguides\springboot\repositories\CustomerRepo.class
@@ -5,4 +6,7 @@ com\javaguides\springboot\domains\Events.class
 com\javaguides\springboot\WelcomeController.class
 com\javaguides\springboot\domains\Customer.class
 com\javaguides\springboot\controllers\EventsController.class
+=======
+com\javaguides\springboot\WelcomeController.class
+>>>>>>> master
 com\javaguides\springboot\SpringbootFirstAppApplication.class
